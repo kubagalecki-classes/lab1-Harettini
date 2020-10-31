@@ -24,13 +24,13 @@ y=0;
     void   setY(double xx) { y = xx; }
     double getX() { return x; }
     double getY() { return y; }
-};
-Wektor2D operator+(Wektor2D& A, Wektor2D& B)
+friend Wektor2D operator+(Wektor2D& A, Wektor2D& B)
 {
     return Wektor2D(A.getX() + B.getX(), A.getY() + B.getY());
 }
-double operator*(Wektor2D& A, Wektor2D& B)
+friend double operator*(Wektor2D& A, Wektor2D& B)
 {
     return (A.getX() * B.getX() + A.getY() * B.getY());
-}
+}};
+
 

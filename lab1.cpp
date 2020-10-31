@@ -73,19 +73,19 @@ public:
         std::cout << "[" << x << "; " << y << "]"
                   << "\n";
     }
-    void   setX(double xx) { x = xx; }
-    void   setY(double xx) { y = xx; }
-    double getX() { return x; }
-    double getY() { return y; }
+    void            setX(double xx) { x = xx; }
+    void            setY(double xx) { y = xx; }
+    double          getX() { return x; }
+    double          getY() { return y; }
+    friend Wektor2D operator+(Wektor2D& A, Wektor2D& B)
+    {
+        return Wektor2D(A.getX() + B.getX(), A.getY() + B.getY());
+    }
+    friend double operator*(Wektor2D& A, Wektor2D& B)
+    {
+        return (A.getX() * B.getX() + A.getY() * B.getY());
+    }
 };
-Wektor2D operator+(Wektor2D& A, Wektor2D& B)
-{
-    return Wektor2D(A.getX() + B.getX(), A.getY() + B.getY());
-}
-double operator*(Wektor2D& A, Wektor2D& B)
-{
-    return (A.getX() * B.getX() + A.getY() * B.getY());
-}
 
 int main()
 {
